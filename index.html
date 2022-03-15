@@ -20,17 +20,27 @@
 <hr>
       <form action="/" method="get">
           <label for="dept">Dept:</label>
-          <input type="text" id="dept" name="Dept"><br>
+          <input type="text" id="dept" name="dept"><br>
           <label for="num">Num:</label>
-          <input type="text" id="num" name="Number"><br>
+          <input type="text" id="num" name="number"><br>
           <label for="area">Area:</label>
-          <input type="text" id="area" name="Area"><br>
+          <input type="text" id="area" name="area"><br>
           <label for="title">Title:</label>
-          <input type="text" id="title" name="Title"><br>
+          <input type="text" id="title" name="title"><br>
           <input type="submit" value="Submit">
       </form>
 <br>
 <hr>
+<h4>ClassId Dept Num Area Title</h4>
+{% if courses|length == 0: %}
+        (None)
+{% else %}
+     {% for course in courses: %}
+        <a href="regdetails">{{'%-6s' % course[0]}}</a>
+<!--above is not the right way to do it since i need to send a parameter idk how to do it-->
+        {{'%-4s %-6s %-4s %s' % (course[1], course[2], course[3], course[4])}}<br>
+     {% endfor %}
+{% endif %}
 
 </body>
 </html>
