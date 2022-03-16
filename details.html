@@ -7,12 +7,34 @@
     <body>
         <h1>Registrar's Office</h1>
         <hr>
-        <h2>Class Details ()</h2>
+        <h2>Class Details (class id {{classid}})</h2>
+        <b>Course Id:</b> {{courseid}}<br>
+        <b>Days:</b> {{days}}<br>
+        <b>Start time:</b> {{starttime}}<br>
+        <b>End time:</b> {{endtime}}<br>
+        <b>Building:</b> {{bldg}}<br>
+        <b>Room:</b> {{roomnum}}
+
         <hr>
-        <h2>Course Details ()</h2>
+
+        <h2>Course Details (course id {{courseid}})</h2>
+        {% if depts|length != 0: %}
+            {% for dept in depts: %}
+                <b>Dept and Number:</b> {{dept[0]}} {{dept[1]}}<br>
+            {% endfor %}
+        {% endif %}
+        <b>Area:</b> {{area}}<br>
+        <b>Title:</b> {{title}}<br>
+        <b>Description:</b> {{descrip}}<br>
+        <b>Prerequisites:</b> {{prereqs}}<br>
+        {% if profs|length != 0: %}
+            {% for prof in profs: %}
+                <b>Professor:</b> {{prof[0]}}<br>
+            {% endfor %}
+        {% endif %}
         <hr>
         Click here to do
-        <a href="index">another class search</a>.
+        <a href="/?dept={{prev_dept}}&num={{prevnum}}&area={{prev_area}}&title={{prev_title}}">another class search</a>.
         <hr>
     </body>
 

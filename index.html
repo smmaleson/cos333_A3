@@ -36,8 +36,7 @@
         (None)
 {% else %}
      {% for course in courses: %}
-        <a href="regdetails">{{'%-6s' % course[0]}}</a>
-<!--above is not the right way to do it since i need to send a parameter idk how to do it-->
+        <a href="regdetails?classid={{course[0]}}">{{'%-6s' % course[0]}}</a>
         {{'%-4s %-6s %-4s %s' % (course[1], course[2], course[3], course[4])}}<br>
      {% endfor %}
 {% endif %}
