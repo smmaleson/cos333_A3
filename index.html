@@ -5,8 +5,16 @@
     <title>Registrar App</title>
 
     <style>
+        div {
+            margin-bottom: 5px;
+        }
         label {
             display: inline-block;
+            width: 65px;
+            text-align: right;
+        }
+        input[type="submit"]{
+            margin-left: 5.1%;
             text-align: right;
         }
     </style>
@@ -19,17 +27,26 @@
 
 <hr>
       <form action="/" method="get">
-          <label for="dept">Dept:</label>
-          <input type="text" id="dept" name="dept"><br>
-          <label for="num">Num:</label>
-          <input type="text" id="num" name="number"><br>
-          <label for="area">Area:</label>
-          <input type="text" id="area" name="area"><br>
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title"><br>
-          <input type="submit" value="Submit">
+          <div>
+              <label for="dept">Dept: </label>
+              <input type="text" id="dept" name="dept"><br>
+          </div>
+          <div>
+              <label for="num">Number: </label>
+              <input type="text" id="num" name="number"><br>
+          </div>
+          <div>
+              <label for="area">Area: </label>
+              <input type="text" id="area" name="area"><br>
+          </div>
+          <div>
+              <label for="title">Title: </label>
+              <input type="text" id="title" name="title"><br>
+          </div>
+          <div>
+              <input type="submit" value="Submit">
+          </div>
       </form>
-<br>
 <hr>
 <h4>ClassId Dept Num Area Title</h4>
 {% if courses|length == 0: %}
