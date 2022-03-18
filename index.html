@@ -53,8 +53,8 @@
         (None)
 {% else %}
      {% for course in courses: %}
-        <a href="regdetails?classid={{course[0]}}">{{'%-6s' % course[0]}}</a>
-        {{'%-4s %-6s %-4s %s' % (course[1], course[2], course[3], course[4])}}<br>
+        <a href="regdetails?classid={{course[0]}}">{{'%6s' % course[0]}}</a>
+        {{'%10s %20s %10s %s' % (course[1], course[2], course[3], course[4])}}<br>
      {% endfor %}
 {% endif %}
 
