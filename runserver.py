@@ -25,7 +25,7 @@ def main():
     try:
         app.run(host='0.0.0.0', port=args.port, debug=True)
     except Exception as ex:
-        print(ex, file=stderr)
+        print(f'Unavailable port error: {ex}', file=stderr)
         exit(1)
 
 
