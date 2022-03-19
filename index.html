@@ -58,10 +58,7 @@
                 <td><strong>Title</strong></td>
             </tr>
 
-            {% if courses|length == 0: %}
-                (None)
 
-            {% else %}
              {% for course in courses: %}
                 <tr>
                     <td><a href="regdetails?classid={{course[0]}}">{{course[0]}}</a></td>
@@ -70,8 +67,7 @@
                     <td>{{course[3]}}</td>
                     <td>{{course[4]}}</td>
                 </tr>
-                {% endfor %}
-            {% endif %}
+            {% endfor %}
         </table>
 
         <hr>
