@@ -30,7 +30,8 @@ def base():
         print(ex, file=stderr)
         return render_template('errorpage.html', errormessage=errormsg)
 
-    html = render_template('index.html', courses=courses)
+    html = render_template('index.html', courses=courses, dept=dept,
+                           num=num, area=area, title=title)
     response = make_response(html)
 
     response.set_cookie('prev_dept', dept)

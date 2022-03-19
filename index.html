@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registrar App</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registrar App</title>
 
-    <style>
-        div {
-            margin-bottom: 5px;
-        }
-        label {
-            display: inline-block;
-            width: 65px;
-            text-align: right;
-        }
-        input[type="submit"]{
-            margin-left: 5.1%;
-            text-align: right;
-        }
-    </style>
+        <style>
+            div {
+                margin-bottom: 3px;
+            }
+            label {
+                display: inline-block;
+                width: 65px;
+                text-align: right;
+            }
+            input[type="submit"]{
+                margin-left: 5.1%;
+                text-align: right;
+            }
+        </style>
 
-</head>
-<body>
+    </head>
+    <body>
 
-<h1>Registrar's Office</h1>
-<h2>Class Search</h2>
+        <h1>Registrar's Office</h1>
+        <h2>Class Search</h2>
 
-<hr>
-      <form action="/" method="get">
-          <div>
-              <label for="dept">Dept: </label>
-              <input type="text" id="dept" name="dept"><br>
-          </div>
-          <div>
-              <label for="num">Number: </label>
-              <input type="text" id="num" name="number"><br>
-          </div>
-          <div>
-              <label for="area">Area: </label>
-              <input type="text" id="area" name="area"><br>
-          </div>
-          <div>
-              <label for="title">Title: </label>
-              <input type="text" id="title" name="title"><br>
-          </div>
-          <div>
-              <input type="submit" value="Submit">
-          </div>
-      </form>
-<hr>
-<h4>ClassId Dept Num Area Title</h4>
-{% if courses|length == 0: %}
-        (None)
-{% else %}
-     {% for course in courses: %}
-        <a href="regdetails?classid={{course[0]}}">{{'%.6s' % course[0]}}</a>
-        {{'%.10s %.20s %.10s %s' % (course[1], course[2], course[3], course[4])}}<br>
-     {% endfor %}
-{% endif %}
+        <hr>
+              <form action="/" method="get">
+                  <div>
+                      <label for="dept">Dept: </label>
+                      <input type="text" id="dept" name="dept" value={{dept}}><br>
+                  </div>
+                  <div>
+                      <label for="num">Number: </label>
+                      <input type="text" id="num" name="number" value={{num}}><br>
+                  </div>
+                  <div>
+                      <label for="area">Area: </label>
+                      <input type="text" id="area" name="area" value={{area}}><br>
+                  </div>
+                  <div>
+                      <label for="title">Title: </label>
+                      <input type="text" id="title" name="title" value={{title}}><br>
+                  </div>
+                  <div>
+                      <input type="submit" value="Submit">
+                  </div>
+              </form>
+        <hr>
+        <h4>ClassId Dept Num Area Title</h4>
+        {% if courses|length == 0: %}
+                (None)
+        {% else %}
+             {% for course in courses: %}
+                <a href="regdetails?classid={{course[0]}}">{{'%.6s' % course[0]}}</a>
+                {{'%.10s %.20s %.10s %s' % (course[1], course[2], course[3], course[4])}}<br>
+             {% endfor %}
+        {% endif %}
+
+
+
 
         <hr>
         Created by
-        <a href="https://www.cs.princeton.edu/~rdondero/">Bob Dondero.</a>
+        <a href="https://www.cs.princeton.edu/~rdondero/">Bob Dondero</a>.
         <hr>
 
-</body>
+    </body>
 </html>
