@@ -4,11 +4,9 @@
 # runserver.py
 # Author: Shayna Maleson, Ellen Su
 # -----------------------------------------------------------------------
-
 from sys import exit, stderr
-from registrarapp import app
 import argparse
-
+from registrarapp import app
 # --------------------------------------------------------------------
 # set up argparse help section
 parser = argparse.ArgumentParser(prog='regserver.py',
@@ -21,6 +19,7 @@ args = parser.parse_args()
 
 
 def main():
+    """open server"""
 
     try:
         app.run(host='0.0.0.0', port=args.port, debug=True)

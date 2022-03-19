@@ -4,7 +4,6 @@
 # registrarapp.py
 # Author: Shayna Maleson, Ellen Su
 # ----------------------------------------------------------------------
-
 from sqlite3 import DatabaseError
 from sys import stderr
 
