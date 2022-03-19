@@ -1,9 +1,18 @@
+#!/usr/bin/env python
+
+# ----------------------------------------------------------------------
+# registrarapp.py
+# Author: Shayna Maleson, Ellen Su
+# ----------------------------------------------------------------------
+
 from sqlite3 import DatabaseError
 from sys import stderr
 
 from flask import Flask, render_template, request, make_response
 import reg_db
 import regdetails_db
+
+#-----------------------------------------------------------------------
 
 app = Flask(__name__, template_folder='.')
 
