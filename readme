@@ -43,4 +43,8 @@ and working with Flask. It was also fun to begin working on front end programmin
 
 (Optionally) Any information that will help us to grade your work in the most favorable light.
 In particular you must describe all known bugs.
-No known bugs.
+Our only issue is with the formatting/html of the search boxes - when we run our program on our locals,
+it appears exactly the same as the reference solution. However, when we run the server on courselab
+and access the website through firefox on the other courselab, the formatting of these elements is
+slightly off. Any changes we would make to the HTML would mess up the local formatting, so we
+decided to keep it as is.
