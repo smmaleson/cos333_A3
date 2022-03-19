@@ -26,7 +26,8 @@ def base():
     try:
         courses = reg_db.db_access(dept, num, area, title)
     except DatabaseError as ex:
-        errormsg = 'A server error occurred. Please contact a system administrator.'
+        errormsg = 'A server error occurred. Please contact a system ' \
+                   'administrator.'
         print(ex, file=stderr)
         return render_template('errorpage.html', errormessage=errormsg)
 
@@ -59,23 +60,29 @@ def details():
     try:
         if not regdetails_db.is_valid_classid(classid):
             errormsg = f'Error: No class with classid {classid} exists'
-            return render_template('errorpage.html', errormessage=errormsg)
+            return render_template('errorpage.html',
+                                   errormessage=errormsg)
 
-        courseid, days, starttime, endtime, bldg, roomnum = regdetails_db.get_class_info(classid)
+        courseid, days, starttime, \
+        endtime, bldg, roomnum = regdetails_db.get_class_info(classid)
 
-        area, title, descrip, prereqs = regdetails_db.get_course_info(courseid)
+        area, title, \
+        descrip, prereqs = regdetails_db.get_course_info(courseid)
 
         depts = regdetails_db.get_dept_and_num(courseid)
         profs = regdetails_db.get_profs(courseid)
     except DatabaseError as ex:
-        errormsg = 'A server error occurred. Please contact a system administrator.'
+        errormsg = 'A server error occurred. Please contact a system ' \
+                   'administrator.'
         print(ex, file=stderr)
         return render_template('errorpage.html', errormessage=errormsg)
 
-    return render_template('details.html', classid=classid, courseid=courseid, days=days,
-                           starttime=starttime, endtime=endtime, bldg=bldg, roomnum=roomnum,
-                           area=area, title=title, descrip=descrip, prereqs=prereqs,
-                           depts=depts, profs=profs,
+    return render_template('details.html', classid=classid,
+                           courseid=courseid, days=days,
+                           starttime=starttime, endtime=endtime,
+                           bldg=bldg, roomnum=roomnum, area=area,
+                           title=title, descrip=descrip,
+                           prereqs=prereqs, depts=depts, profs=profs,
                            prev_dept=request.cookies.get('prev_dept'),
                            prev_num=request.cookies.get('prev_num'),
                            prev_area=request.cookies.get('prev_area'),
