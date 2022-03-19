@@ -9,10 +9,11 @@ Please be thorough; we're looking for two substantial paragraphs, not a sentence
 
 Shayna:
 
-I wrote on the registrarapp program, handling the logic of browser calls as well as the
-information sent back and forth. Thus I worked on most of the Flask programming and feel very
-comfortable with using Flask now. I also covered error handling and contributed significantly
-to the html pages. ***** ADD *****
+I worked on the registrarapp program, writing the Flask endpoints and designing and implementing
+the URL parameters. I used I did most of the Flask programming and feel very comfortable with using
+Flask now. I used reg_db.py and regdetails_db.py from our previous assignments to perform the
+searches. I also covered error handling (exception catching, error messages, etc) and contributed to
+the details and errorpage html files using the Jinja template format.
 
 Ellen:
 I contributed to the html pages, focusing on matching reference formatting and other details. I
@@ -42,3 +43,4 @@ and working with Flask. It was also fun to begin working on front end programmin
 
 (Optionally) Any information that will help us to grade your work in the most favorable light.
 In particular you must describe all known bugs.
+No known bugs.
