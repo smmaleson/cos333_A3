@@ -10,11 +10,8 @@ from sys import stderr
 from flask import Flask, render_template, request, make_response
 import reg_db
 import regdetails_db
-
 #-----------------------------------------------------------------------
-
 app = Flask(__name__, template_folder='.')
-
 
 @app.route('/', methods=['GET'])
 def base():
@@ -49,7 +46,6 @@ def base():
     response.set_cookie('prev_title', title)
 
     return response
-
 
 @app.route('/regdetails', methods=['GET'])
 def details():
