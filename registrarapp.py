@@ -19,7 +19,7 @@ app = Flask(__name__, template_folder='.')
 
 @app.route('/', methods=['GET'])
 def base():
-
+    """setup upon first opening browser page and handle search"""
     dept = request.args.get('dept')
     dept = dept if (dept is not None) else ''  # for initial search
 
@@ -54,6 +54,7 @@ def base():
 
 @app.route('/regdetails', methods=['GET'])
 def details():
+    """request class details from database"""
     classid = request.args.get('classid')
 
     if classid is None or classid == '':
