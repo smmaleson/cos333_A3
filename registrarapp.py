@@ -96,6 +96,3 @@ def details():
                            prev_num=request.cookies.get('prev_num'),
                            prev_area=request.cookies.get('prev_area'),
                            prev_title=request.cookies.get('prev_title'))
-
-if __name__ == '__main__':
-    main()
