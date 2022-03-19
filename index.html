@@ -75,17 +75,6 @@
 
         </table>
 
-
-        <h4>ClassId Dept Num Area Title</h4>
-        {% if courses|length == 0: %}
-                (None)
-        {% else %}
-             {% for course in courses: %}
-                <a href="regdetails?classid={{course[0]}}">{{'%.6s' % course[0]}}</a>
-                {{'%.10s %.20s %.10s %s' % (course[1], course[2], course[3], course[4])}}<br>
-             {% endfor %}
-        {% endif %}
-
         <hr>
         Created by
         <a href="https://www.cs.princeton.edu/~rdondero/">Bob Dondero</a>.
